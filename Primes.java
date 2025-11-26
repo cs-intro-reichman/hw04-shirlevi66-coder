@@ -29,7 +29,7 @@ public class Primes {
             num++;
         }
 
-        double percent = 100.0 * count / (n - 1);
+        double percent = 100.0 * count / n;
         System.out.println("There are " + count + " primes between 2 and " + n + " (" + (int)percent + "% are primes)");
 
     }

@@ -171,9 +171,22 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str1.length < str2.length){
-            return 0; 
-        }
-        return 0;
+    if (str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0)
+        return -2;
+
+    int len1 = str1.length();
+    int len2 = str2.length();
+    int min = Math.min(len1, len2);
+
+    for (int i = 0; i < min; i++) {
+        char c1 = str1.charAt(i);
+        char c2 = str2.charAt(i);
+        if (c1 < c2) return -1;
+        if (c1 > c2) return 1;
     }
+
+    if (len1 < len2) return -1;
+    if (len1 > len2) return 1;
+    return 0;
+}
 }
